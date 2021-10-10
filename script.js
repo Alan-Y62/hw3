@@ -85,5 +85,12 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
+    let allBox = document.querySelectorAll('td');
+    for(let i = 0; i < allBox.length; i++) {
+        let color = allBox[i].style.background;
+        if(color === "" || color === 'white') {
+            allBox[i].style.background = colorSelected;
+        }
+    }
 }
