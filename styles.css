@@ -3,7 +3,11 @@ tr,td{
     border-style: solid;
 }
 td{
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     background-color: white;
+}
+
+table {
+    margin-top: 25px;
 }
