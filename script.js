@@ -49,7 +49,8 @@ function addC() {
 function removeR() {
     //alert("Clicked Remove Row")
     let table = document.querySelector('table')
-    table.deleteRow(-1)
+    let lastChild = table.lastElementChild;
+    table.removeChild(lastChild)
 }
 //Remove a column
 function removeC() {
