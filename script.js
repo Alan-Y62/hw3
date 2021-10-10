@@ -80,7 +80,7 @@ function clearAll(){
     //alert("Clicked Clear All")
     let allBox = document.querySelectorAll('td');
     for(let i = 0; i < allBox.length; i++) {
-        allBox[i].style.background = white;
+        allBox[i].style.background = 'white';
     }
 }
 
