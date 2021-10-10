@@ -69,7 +69,11 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")
+    let allBox = document.querySelectorAll('td');
+    for(let i = 0; i < allBox.length; i++) {
+        allBox[i].style.background = colorSelected;
+    }
 }
 
 function clearAll(){
