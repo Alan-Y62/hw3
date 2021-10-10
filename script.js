@@ -2,6 +2,10 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+function singleColor(box) {
+    box.style.background = colorSelected;
+}
+
 //Add a row
 function addR() {
     //alert("Clicked Add Row")
@@ -11,12 +15,14 @@ function addR() {
     if(numRows !== 0) {
         for(let i = 0; i< numCols; i++) {
             let newBox = document.createElement('td')
+            newBox.setAttribute('onclick',"singleColor(this)")
             newRow.appendChild(newBox)
         }
         table.appendChild(newRow)
         numRows++;
     }
     else {
+        newBox.setAttribute('onclick',"singleColor(this)")
         newRow.appendChild(newBox)
         table.appendChild(newRow)
         numCols++;
@@ -33,11 +39,13 @@ function addC() {
         tableRow = document.querySelectorAll('tr')
         for (i = 0; i < numRows; i++) {
             let newBox = document.createElement('td')
+            newBox.setAttribute('onclick',"singleColor(this)")
             tableRow[i].appendChild(newBox)
         }
         numCols++;
     }
     else {
+        newBox.setAttribute('onclick',"singleColor(this)")
         newCol.appendChild(newBox)
         table.appendChild(newCol)
         numCols++;
