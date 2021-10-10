@@ -2,6 +2,25 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+function add5R() {
+    let i = 0;
+    for(i;i<5;i++) {
+        addR();
+    }
+}
+
+function add5C() {
+    let i = 0;
+    for(i;i<5;i++) {
+        addC();
+    }
+}
+
+function setColor() {
+    colorSelected = document.querySelector('input').value;
+    console.log(colorSelected)
+}
+
 function singleColor(box) {
     box.style.background = colorSelected;
 }
@@ -29,6 +48,7 @@ function addR() {
         numRows++;
     }
 }
+
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
@@ -56,19 +76,30 @@ function addC() {
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
-    let table = document.querySelector('table')
-    let lastChild = table.lastElementChild;
-    table.removeChild(lastChild)
+    if(numRows !== 0) {
+        let table = document.querySelector('table')
+        let lastChild = table.lastElementChild;
+        table.removeChild(lastChild)
+        numRows--;
+        if(numRows === 0) {
+            numCols = 0;
+        }
+    }
 }
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
-    let allRows = document.querySelectorAll('tr')
-    for(let i = 0; i < allRows.length; i++) {
-        let lastChild = allRows[i].lastElementChild
-        allRows[i].removeChild(lastChild)
+    if(numCols !== 0) {
+        let allRows = document.querySelectorAll('tr')
+        for(let i = 0; i < allRows.length; i++) {
+            let lastChild = allRows[i].lastElementChild
+            allRows[i].removeChild(lastChild)
+        }
+        numCols--;
+        if(numCols === 0) {
+            numRows = 0;
+        }
     }
-
 }
 //sets global var for selected color
 function selected(){
