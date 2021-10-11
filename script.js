@@ -2,6 +2,14 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+function removeA() {
+    let table = document.querySelector('table');
+    while(table.lastChild) {
+        table.removeChild(table.lastChild)
+    }
+    numCols, numRows = 0;
+}
+
 function add5R() {
     let i = 0;
     for(i;i<5;i++) {
