@@ -2,12 +2,19 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+function update() {
+    document.querySelector('#num').textContent = numRows;
+    document.querySelector('#num1').textContent = numCols;
+}
+
+
 function removeA() {
     let table = document.querySelector('table');
     while(table.lastChild) {
         table.removeChild(table.lastChild)
     }
-    numCols, numRows = 0;
+    console.log(numRows + " " + numCols)
+    numCols = 0, numRows = 0;
 }
 
 function add5R() {
@@ -15,6 +22,7 @@ function add5R() {
     for(i;i<5;i++) {
         addR();
     }
+    update()
 }
 
 function add5C() {
@@ -22,6 +30,7 @@ function add5C() {
     for(i;i<5;i++) {
         addC();
     }
+    update()
 }
 
 function setColor() {
@@ -55,6 +64,7 @@ function addR() {
         numCols++;
         numRows++;
     }
+    update()
 }
 
 //Add a column
@@ -79,6 +89,7 @@ function addC() {
         numCols++;
         numRows++;
     }
+    update()
 }
 
 //Remove a row
@@ -93,6 +104,7 @@ function removeR() {
             numCols = 0;
         }
     }
+    update()
 }
 //Remove a column
 function removeC() {
@@ -108,6 +120,7 @@ function removeC() {
             numRows = 0;
         }
     }
+    update()
 }
 //sets global var for selected color
 function selected(){
